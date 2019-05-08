@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  file-manager:
+    container_name: cube-file-manager
+    build: ./api/file-manager
+    ports:
+      - "8081:5000"
+    volumes:
+      - "./configs:/config"
+      - "./animations:/animations"
+  
+  cube-core:
+    container_name: cube-core
+    build: ./api/core
+    devices:
+      - "/dev/gpiomem:/dev/gpiomem"
+    ports:
+      - "8080:5000"
+    volumes:
+      - "./configs:/config"
