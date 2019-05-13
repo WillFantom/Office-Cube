@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<title>Office Cube Club</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+<style>
+body {font-family: "Raleway", Arial, sans-serif}
+.w3-row img {margin-bottom: -8px}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+}
+
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: white;
+  color: #555;
+  font-size: 19px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container .btn:hover {
+  background-color: rgb(82, 82, 82);
+  color: white;
+}
+
+img {
+border-radius: 8px;
+}
+
+.collapsible {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: white;
+  color: #555;
+  font-size: 19px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.active, .collapsible:hover {
+  background-color: rgb(82, 82, 82);
+  color: white;
+}
+
+.colContent {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+</style>
+<body>
+  
+<!-- PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+  <!-- Header -->
+  <header class="w3-container w3-xlarge w3-padding-24">
+    <a href="#" class="w3-left w3-button w3-white">MENU</a>
+    <a href="#about" class="w3-right w3-button w3-white">About</a>
+  </header>
+
+  <!-- Photo Grid -->
+  <div class="w3-row">
+    <div class="w3-half">
+      <div class="container">
+        <img src="images/gracie.jpg" style="width:90%">
+        <button class="collapsible">Show Animations</button>
+        <div class="colContent">
+          <br>
+          <p>Put the list contents here as an element</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-half">
+      <div class="container">
+        <img src="images/gracie2.jpg" style="width:90%">
+        <button class="btn">Make animations</button>
+      </div>
+    </div>
+
+  </div>
+
+<!-- End Page Content -->
+</div>
+
+<!-- Footer / About Section -->
+<footer class="w3-light-grey w3-padding-64 w3-center" id="about">
+  <h2>The Cube</h2>
+  <form style="margin:auto;width:60%" action="/action_page.php" target="_blank">
+    <p>The cube is accessible internally on the university network at http://officecube.club
+    <br> Press the left button to display a list of animations to play on the cube
+    <br> Press the right button to launch the animation creation program
+    <br> Created by Ellie, Damian and Will
+    </p>
+    <p class="w3-large w3-text-pink">Images by Gracie the three legged wonder dog</p>
+</footer>
+
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  }
+  </script>
+
+</body>
+</html>
