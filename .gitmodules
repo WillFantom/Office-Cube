@@ -4,3 +4,6 @@
 [submodule "ui"]
 	path = ui
 	url = https://github.com/WillFantom/Cube-UI
+[submodule "cube-ui"]
+	path = cube-ui
+	url = https://github.com/dborowiec10/cube-ui
